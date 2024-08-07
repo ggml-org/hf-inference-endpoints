@@ -1,0 +1,14 @@
+# This docker-compose is only for TESTING
+services:
+  llamacpp:
+    build: .
+    image: ngxson/llamacpp-server
+    volumes:
+      - ./repository:/repository
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
