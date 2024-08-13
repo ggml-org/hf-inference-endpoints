@@ -9,7 +9,7 @@ For image tag name: it will be in format of `{your_docker_username}/llamacpp-ser
 
 In this example, we will use `ngxson` as `{your_docker_username}`
 
-**To build from a specific branch**
+**To select a specific branch or commit**
 
 Modify `Dockerfile`:
 
