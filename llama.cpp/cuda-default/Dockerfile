@@ -13,7 +13,7 @@ WORKDIR /app
 RUN git clone https://github.com/ggerganov/llama.cpp -b master --depth 1 .
 
 RUN cmake -S . -B build \
-    -DBUILD_SHARED_LIBS=OFF \
+    -DCMAKE_EXE_LINKER_FLAGS=-Wl,--allow-shlib-undefined \
     -DLLAMA_CURL=ON \
     -DLLAMA_SERVER_VERBOSE=OFF \
     -DLLAMA_DISABLE_LOGS=1 \
