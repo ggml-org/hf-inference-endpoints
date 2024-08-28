@@ -31,6 +31,8 @@ FROM ${BASE_CUDA_RUN_CONTAINER} AS runtime
 RUN apt-get update && \
     apt-get install -y libcurl4-openssl-dev libgomp1 curl
 
+COPY --from=build /app/build/ggml/src/libggml.so /libggml.so
+COPY --from=build /app/build/src/libllama.so /libllama.so
 COPY --from=build /app/build/bin/* /
 
 ENTRYPOINT [ "/bin/bash" ]
